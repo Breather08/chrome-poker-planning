@@ -28,6 +28,11 @@ func (r *Room) AddPlayer(conn *websocket.Conn, user *User) {
 	r.GameState.Players[user.ID] = user
 }
 
+func (r *Room) RemovePlayer(conn *websocket.Conn, user *User) {
+	delete(r.Connections, conn)
+	delete(r.GameState.Players, user.ID)
+}
+
 func (r *Room) Broadcast(message []byte) {
 	for conn := range r.Connections {
 		if err := conn.WriteMessage(websocket.TextMessage, message); err != nil {
