@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	rooms    = make(map[string]*Room) // TODO: User Redis
+	rooms    = make(map[string]*Room)
 	upgrader = websocket.Upgrader{CheckOrigin: func(r *http.Request) bool { return true }}
 )
 

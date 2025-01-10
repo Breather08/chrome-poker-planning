@@ -62,7 +62,7 @@ interface ResponsePayload {
   body: any;
 }
 
-const WS_API_PATH = "ws://192.168.0.34:8080/ws";
+const WS_API_PATH = "ws://192.168.1.154:8080/ws";
 const roomId = window.location.href.replace(/.+\/((\w|-)+)(\?.+)?$/g, "$1");
 const username = ref(localStorage.getItem("username") || "");
 const id = ref(localStorage.getItem("user_id") || "");
